@@ -1,0 +1,286 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
+
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="shortcut icon" href="{% static 'portfolio/icon/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'portfolio/icon/apple-touch-icon.png' %}">
+    <title>Meet Daxini</title>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <div>
+                <a href="#" class="nav__logo">Meet Daxini</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
+                    <li class="nav__item"><a href="#works" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home" id="home">
+            <div class="home__container bd-grid">
+
+            <div id="msgs">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="msg__{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            </div>
+
+                <div class="home__data">
+                    <div class="home__img">
+                        <img src="{% static 'portfolio/img/perfil.png' %}" alt="">
+                    </div>
+
+                    <h1 class="home_title">Meet Daxini</h1>
+                    <span class="home__profession">Web Developer</span>
+                    <div class="home__social">
+                        <a href="https://www.linkedin.com/in/meetdaxini/" class="home__social-link" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/meetdaxini" class="home__social-link" target="_blank"><i class='bx bxl-github'></i></a>
+                        <a href="https://www.instagram.com/mitdaxini/" class="home__social-link" target="_blank"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.facebook.com/meet.daxini.3/" class="home__social-link" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    </div>
+                    <a href="{{cv.pdf.url}}" target="_blank" class="button home__button">Download Resume</a>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section" id="about">
+            <!-- <span class="section-subtitle">
+                My intro
+            </span> -->
+            <h2 class="section-title">About Me</h2>
+
+            <div class="about__container bd-grid">
+                <div class="about__data">
+                    <p class="about__description">
+                        Hi! I’m Meet, born and raised in Ahmedabad, India. I am a recent graduate and have done my bachelors in Information Technology. I try to grab any opportunity I can in developing myself and enhancing my abilities. I am proficient in Python and Django Framework. I am eager to strengthen my knowledge in web development, machine learning, Data Science and analytical skills. For recreational purposes I play cricket and watch a lot of Movies, T.V. and Web series some of my favorites are WestWorld, Black Mirror, Person of Interest and Silicon Valley Probably these shows got me interested about the world of Data and AI. I also love to travel.
+                    </p>
+                </div>
+
+                <div>
+                    <div class="about__information">
+                        <h3 class="about__information-title">Information</h3>
+
+                        <div class="about__information-data">
+                        <i class='bx bx-user about__information-icon'></i>
+                        <span>Meet Daxini</span>
+                        </div>
+
+                        <div class="about__information-data">
+                            <i class='bx bxs-cake about__information-icon' ></i>
+                            <span>12 Nov 1998</span>
+                        </div>
+
+                        <div class="about__information-data">
+                            <i class='bx bx-phone about__information-icon'></i>
+                            <span><a href="tel:+919408479100">(+91)9408479100</a></span>
+                        </div>
+
+                        <div class="about__information-data">
+                            <i class='bx bx-envelope about__information-icon'></i>
+                            <span><a href="mailto:meetdaxini@gmail.com">meetdaxini10@gmail.com</a></span>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--===== SKILLS =====-->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">My Skills</h2>
+
+            <div class="skills__container bd-grid">
+                <div class="skills__content">
+                    <h3 class="skills__subtitle">Frontend</h3>
+
+                    <div class="skills__data">
+                        <span class="skills__name">Html/css</span>
+                        <span class="skills__number">70%</span>
+                        <span class="skills__bar skills__html"></span>
+                    </div>
+                    <div class="skills__data">
+                        <span class="skills__name">Javascript</span>
+                        <span class="skills__number">60%</span>
+                        <span class="skills__bar skills__javascript"></span>
+                    </div>
+
+
+
+                </div>
+                <div class="skills__content">
+                    <h3 class="skills__subtitle">Backend</h3>
+
+                    <div class="skills__data">
+                        <span class="skills__name">Python</span>
+                        <span class="skills__number">80%</span>
+                        <span class="skills__bar skills__python"></span>
+                    </div>
+                    <div class="skills__data">
+                        <span class="skills__name">Django</span>
+                        <span class="skills__number">70%</span>
+                        <span class="skills__bar skills__django"></span>
+                    </div>
+                    <div class="skills__data">
+                        <span class="skills__name">SQL</span>
+                        <span class="skills__number">60%</span>
+                        <span class="skills__bar skills__sql"></span>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!--===== EDUCATION =====-->
+        <section class="education section" id="education">
+            <h2 class="section-title">Education & Certification</h2>
+
+            <div class="education__container bd-grid">
+                {% for edu in edus %}
+                <div class="education__content">
+                    <div>
+                        <h3 class="education__year">{{edu.course_time}}</h3>
+                        <span class="education__university">{{edu.institute}}</span>
+                    </div>
+                    <div class="education__time">
+                        <span class="education__rounder"></span>
+                        <span class="education__line"></span>
+                    </div>
+                    <div>
+                        <h3 class="education__race">{{edu}}</h3>
+                        {% if edu.description %}
+                        <span class="education__specialty">{{edu.description}}</span>
+                        {% elif edu.link %}
+                        <span class="education__specialty">
+                        <a href="{{edu.link}}" target="_blank"><i class="bx bx-link-alt">Certificate Link</i></a></span>
+                        {% endif %}     
+                    </div>
+                </div>          
+                {% endfor %}
+            </div>
+
+        </section>
+
+        <!--===== WORKS =====-->
+        <section class="works section" id="works">
+            <!-- <span class="section-subtitle">My Portfolio</span> -->
+            <h2 class="section-title">Recent Projects</h2>
+
+            <div class="works__container bd-grid">
+                {% for proj in projs  %}
+                    <div class="works__img">
+                        <img src="{{ proj.img.url }}" alt="">
+                        <div class="works__data">
+                            {% if proj.demo_link %}
+                                <a href="{{ proj.demo_link }}" class="works__link" target="_blank"><i class="bx bx-link-alt"></i></a>
+                            {% endif %}
+                            {% if proj.demo_link %}
+                            <a href="{{ proj.github_link }}" class="works__link" target="_blank"><i class="bx bxl-github"></i></a>
+                            {% endif %}
+                            <span class="works__title">{{proj.title}}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </section>
+
+        <!--===== CONTACT =====-->
+        <section class="contact section" id="contact">
+            <!-- <span class="section-subtitle">Contact Me</span> -->
+            <h2 class="section-title">Get In Touch</h2>
+
+            <div class="contact__container bd-grid">
+                <form class="contact__form" method="POST" action="" >
+                    {% csrf_token %}
+                    <div class="contact__inputs">
+                        <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                        <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                    </div>
+                    <input type="text" name="subject" placeholder="Subject" class="contact__input" required>
+                    <textarea name="message" cols="0" rows="10" placeholder="Message" class="contact__input" required></textarea>
+                    <input type="submit" value="Send Message" class="button contact__button">
+                </form>
+
+                <div>
+                    <div class="contact__info">
+                        <h3 class="contact__subtitle">Call me</h3>
+                        <span class="contact__text"><a href="tel:+919408479100">(+91)9408479100</a></span>
+                    </div>
+                    <div class="contact__info">
+                        <h3 class="contact__subtitle">E-mail</h3>
+                        <span class="contact__text"><a href="mailto:meetdaxini@gmail.com">meetdaxini10@gmail.com</a></span>
+                    </div>
+                    <div class="contact__info">
+                        <h3 class="contact__subtitle">Location</h3>
+                        <span class="contact__text">Ahmedabad, Gujarat, India.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer section">
+        <div class="footer__container bd-grid">
+            
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/in/meetdaxini/" class="footer__link" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://github.com/meetdaxini" class="footer__link" target="_blank"><i class="bx bxl-github"></i></a>
+                <a href="https://www.instagram.com/mitdaxini/" class="footer__link" target="_blank"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.facebook.com/meet.daxini.3/" class="footer__link" target="_blank"><i class="bx bxl-facebook"></i></a>
+            </div>
+            
+            <p class="footer__description">Made with ❤️ by Meet Daxini.</p>
+        </div>
+    </footer>
+    <!--===== MAIN JS =====-->
+    <script src="{% static 'portfolio/js/main.js' %}"></script>
+</body>
+
+</html>
