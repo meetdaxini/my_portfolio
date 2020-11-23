@@ -50,15 +50,15 @@
         <section class="home" id="home">
             <div class="home__container bd-grid">
 
-            <div id="msgs">
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li{% if message.tags %} class="msg__{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            </div>
+                <div id="msgs">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="msg__{{ message.tags }}" {% endif %}>{{ message }}</li>
+                            {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
 
                 <div class="home__data">
                     <div class="home__img">
@@ -68,10 +68,14 @@
                     <h1 class="home_title">Meet Daxini</h1>
                     <span class="home__profession">Web Developer</span>
                     <div class="home__social">
-                        <a href="https://www.linkedin.com/in/meetdaxini/" class="home__social-link" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        <a href="https://github.com/meetdaxini" class="home__social-link" target="_blank"><i class='bx bxl-github'></i></a>
-                        <a href="https://www.instagram.com/mitdaxini/" class="home__social-link" target="_blank"><i class='bx bxl-instagram'></i></a>
-                        <a href="https://www.facebook.com/meet.daxini.3/" class="home__social-link" target="_blank"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.linkedin.com/in/meetdaxini/" class="home__social-link" target="_blank"><i
+                                class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/meetdaxini" class="home__social-link" target="_blank"><i
+                                class='bx bxl-github'></i></a>
+                        <a href="https://www.instagram.com/mitdaxini/" class="home__social-link" target="_blank"><i
+                                class='bx bxl-instagram'></i></a>
+                        <a href="https://www.facebook.com/meet.daxini.3/" class="home__social-link" target="_blank"><i
+                                class='bx bxl-facebook'></i></a>
                     </div>
                     <a href="{{cv.pdf.url}}" target="_blank" class="button home__button">Download Resume</a>
 
@@ -90,7 +94,13 @@
             <div class="about__container bd-grid">
                 <div class="about__data">
                     <p class="about__description">
-                        Hi! I’m Meet, born and raised in Ahmedabad, India. I am a recent graduate and have done my bachelors in Information Technology. I try to grab any opportunity I can in developing myself and enhancing my abilities. I am proficient in Python and Django Framework. I am eager to strengthen my knowledge in web development, machine learning, Data Science and analytical skills. For recreational purposes I play cricket and watch a lot of Movies, T.V. and Web series some of my favorites are WestWorld, Black Mirror, Person of Interest and Silicon Valley Probably these shows got me interested about the world of Data and AI. I also love to travel.
+                        Hi! I’m Meet, born and raised in Ahmedabad, India. I am a recent graduate and have done my
+                        bachelors in Information Technology. I try to grab any opportunity I can in developing myself
+                        and enhancing my abilities. I am proficient in Python and Django Framework. I am eager to
+                        strengthen my knowledge in web development, machine learning, Data Science and analytical
+                        skills. For recreational purposes I play cricket and watch a lot of Movies, T.V. and Web series
+                        some of my favorites are WestWorld, Black Mirror, Person of Interest and Silicon Valley Probably
+                        these shows got me interested about the world of Data and AI. I also love to travel.
                     </p>
                 </div>
 
@@ -99,12 +109,12 @@
                         <h3 class="about__information-title">Information</h3>
 
                         <div class="about__information-data">
-                        <i class='bx bx-user about__information-icon'></i>
-                        <span>Meet Daxini</span>
+                            <i class='bx bx-user about__information-icon'></i>
+                            <span>Meet Daxini</span>
                         </div>
 
                         <div class="about__information-data">
-                            <i class='bx bxs-cake about__information-icon' ></i>
+                            <i class='bx bxs-cake about__information-icon'></i>
                             <span>12 Nov 1998</span>
                         </div>
 
@@ -190,15 +200,18 @@
                         <span class="education__line"></span>
                     </div>
                     <div>
-                        <h3 class="education__race">{{edu}}</h3>
+                        {% if edu.link %}<a href="{{edu.link}}" target="_blank">{% endif %}
+                            <h3 class="education__race">{{edu}}</h3>
+                            {% if edu.link %}</a>{% endif %}
                         {% if edu.description %}
                         <span class="education__specialty">{{edu.description}}</span>
                         {% elif edu.link %}
                         <span class="education__specialty">
-                        <a href="{{edu.link}}" target="_blank"><i class="bx bx-link-alt">Certificate Link</i></a></span>
-                        {% endif %}     
+                            <a href="{{edu.link}}" target="_blank"><i class="bx bx-link-alt">Certificate
+                                    Link</i></a></span>
+                        {% endif %}
                     </div>
-                </div>          
+                </div>
                 {% endfor %}
             </div>
 
@@ -211,19 +224,41 @@
 
             <div class="works__container bd-grid">
                 {% for proj in projs  %}
-                    <div class="works__img">
-                        <img src="{{ proj.img.url }}" alt="">
-                        <div class="works__data">
-                            {% if proj.demo_link %}
-                                <a href="{{ proj.demo_link }}" class="works__link" target="_blank"><i class="bx bx-link-alt"></i></a>
-                            {% endif %}
-                            {% if proj.demo_link %}
-                            <a href="{{ proj.github_link }}" class="works__link" target="_blank"><i class="bx bxl-github"></i></a>
-                            {% endif %}
-                            <span class="works__title">{{proj.title}}</span>
+                <div class="works__img">
+                    <img src="{{ proj.img.url }}" alt="">
+                    <div class="works__data">
+                        {% if proj.demo_link %}
+                        <a href="{{ proj.demo_link }}" class="works__link" target="_blank">
+                            <i class="bx bx-link-alt"></i>
+                        </a>
+                        {% endif %}
+                        {% if proj.demo_link %}
+                        <a href="{{ proj.github_link }}" class="works__link" target="_blank">
+                            <i class="bx bxl-github"></i>
+                        </a>
+                        {% endif %}
+                        <span class="works__title">{{proj.title}}</span>
+                        <div class="works__tools">
+                            {% for tool in proj.tools.all  %}
+                            <a href="{{tool.link}}" target="_blank" class="tools__link"><img src="{{tool.img.url}}"
+                                    alt="{{tool}}" class="tools__img">
+                                <span class="tools__name">{{tool}}</span>
+                            </a>
+                            {% endfor %}
                         </div>
                     </div>
+                </div>
                 {% endfor %}
+            </div>
+
+            <div class="visit__button">
+                <a href="https://github.com/meetdaxini" target="_blank" class="button home__button">
+                    <div class="flex__visit">
+                        <i class="bx bxl-github bx-sm visit__icon"></i>
+                        <p>visit my github</p>
+                    </div>
+                </a>
+
             </div>
 
         </section>
@@ -234,14 +269,15 @@
             <h2 class="section-title">Get In Touch</h2>
 
             <div class="contact__container bd-grid">
-                <form class="contact__form" method="POST" action="" >
+                <form class="contact__form" method="POST" action="">
                     {% csrf_token %}
                     <div class="contact__inputs">
                         <input type="text" name="name" placeholder="Name" class="contact__input" required>
                         <input type="email" name="email" placeholder="Email" class="contact__input" required>
                     </div>
                     <input type="text" name="subject" placeholder="Subject" class="contact__input" required>
-                    <textarea name="message" cols="0" rows="10" placeholder="Message" class="contact__input" required></textarea>
+                    <textarea name="message" cols="0" rows="10" placeholder="Message" class="contact__input"
+                        required></textarea>
                     <input type="submit" value="Send Message" class="button contact__button">
                 </form>
 
@@ -252,7 +288,8 @@
                     </div>
                     <div class="contact__info">
                         <h3 class="contact__subtitle">E-mail</h3>
-                        <span class="contact__text"><a href="mailto:meetdaxini@gmail.com">meetdaxini10@gmail.com</a></span>
+                        <span class="contact__text"><a
+                                href="mailto:meetdaxini@gmail.com">meetdaxini10@gmail.com</a></span>
                     </div>
                     <div class="contact__info">
                         <h3 class="contact__subtitle">Location</h3>
@@ -268,15 +305,19 @@
     <!--===== FOOTER =====-->
     <footer class="footer section">
         <div class="footer__container bd-grid">
-            
+
             <div class="footer__social">
-                <a href="https://www.linkedin.com/in/meetdaxini/" class="footer__link" target="_blank"><i class="bx bxl-linkedin"></i></a>
-                <a href="https://github.com/meetdaxini" class="footer__link" target="_blank"><i class="bx bxl-github"></i></a>
-                <a href="https://www.instagram.com/mitdaxini/" class="footer__link" target="_blank"><i class="bx bxl-instagram"></i></a>
-                <a href="https://www.facebook.com/meet.daxini.3/" class="footer__link" target="_blank"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/meetdaxini/" class="footer__link" target="_blank"><i
+                        class="bx bxl-linkedin"></i></a>
+                <a href="https://github.com/meetdaxini" class="footer__link" target="_blank"><i
+                        class="bx bxl-github"></i></a>
+                <a href="https://www.instagram.com/mitdaxini/" class="footer__link" target="_blank"><i
+                        class="bx bxl-instagram"></i></a>
+                <a href="https://www.facebook.com/meet.daxini.3/" class="footer__link" target="_blank"><i
+                        class="bx bxl-facebook"></i></a>
             </div>
-            
-            <p class="footer__description">Made with ❤️ by Meet Daxini.</p>
+
+            <p class="footer__description">Thank you ❤️ for visiting my portfolio.</p>
         </div>
     </footer>
     <!--===== MAIN JS =====-->

@@ -1,14 +1,37 @@
 from django.db import models
 # Create your models here.
 
+
 class Project(models.Model):
     title = models.CharField(max_length=100)
     demo_link = models.URLField(blank=True)
     github_link = models.URLField(blank=True)
     img = models.ImageField(upload_to='portfolio/images/')
+    order = models.IntegerField(default=0)
+    tools = models.ManyToManyField('Tool', through='Project_tool')
 
     def __str__(self):
         return self.title
+
+
+class Tool(models.Model):
+    name = models.CharField(max_length=40)
+    img = models.ImageField(upload_to='portfolio/images/')
+    projects = models.ManyToManyField('Project', through='Project_tool')
+    link = models.URLField(blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Project_tool(models.Model):
+    tool = models.ForeignKey(Tool, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+
+    def __str__(self):
+        string = "{0} uses {1}".format(self.project.title, self.tool.name)
+        return string
+
 
 class Education(models.Model):
     institute = models.CharField(max_length=100)
@@ -46,11 +69,13 @@ class Education(models.Model):
     #         return datetime.date(self.end_year)
     #     else:
     #         return None
-    
+
     def __str__(self):
         return self.course_title
 
+
 class Cv(models.Model):
     pdf = models.FileField(upload_to='portfolio/pdf/', null=True, blank=True)
-    def __str__(self):   
+
+    def __str__(self):
         return self.pdf.name
