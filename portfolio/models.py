@@ -73,9 +73,3 @@ class Education(models.Model):
     def __str__(self):
         return self.course_title
 
-
-class Cv(models.Model):
-    pdf = models.FileField(upload_to='portfolio/pdf/', null=True, blank=True)
-
-    def __str__(self):
-        return self.pdf.name

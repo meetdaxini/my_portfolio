@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.urls import reverse
-from .models import Project, Education, Cv
+from .models import Project, Education
 
 # Create your views here.
 
@@ -11,8 +11,7 @@ from .models import Project, Education, Cv
 def index(request):
     projects = Project.objects.all().order_by('-order')
     educations = Education.objects.all()
-    resume = get_object_or_404(Cv, pk=3)
-    ctx = {'projs': projects, 'edus': educations, 'cv': resume}
+    ctx = {'projs': projects, 'edus': educations}
     if request.method == 'POST':
         name = request.POST['name']
         subject = request.POST['subject']
