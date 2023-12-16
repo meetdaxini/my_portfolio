@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Last Decade of Tennis</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'portfolio/css/tennis/base-styles.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'portfolio/css/tennis/chart-styles.css' %}"
+    />
+
+    <script
+      type="module"
+      src="{% static 'portfolio/js/tennis/chart-script.js' %}"
+    ></script>
+  </head>
+  <body>
+    <div class="center-column">
+      <figure class="chart">
+        <div class="chart-meta">
+          <div class="chart-hed">
+            Dominance in Serving: A Key to Victory in ATP Singles Matches.
+            Getting more ace serves gets you more probability at winning.
+          </div>
+        </div>
+        <div class="">
+          <div>
+            <!-- <div class="chart-dek">
+              This is where the chart dek or subhed or description goes...
+            </div> -->
+            <div id="barchart-parent">
+              <div class="barchart-graphic"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-footer">
+          <div class="chart-notes">
+            <div class="chart-note">
+              Note: The chart shows the percentage of ATP tennis singles matches
+              where the winner scored more aces, the same number of aces, or
+              fewer aces than the loser, for matches played on four different
+              court surfaces
+            </div>
+          </div>
+          <div class="chart-source">
+            Chart: Meet Daxini · Source:
+            <a
+              href="https://www.tennisabstract.com/blog/"
+              class="chart-source"
+              style="text-decoration: none"
+              >Jeff Sackmann</a
+            >
+          </div>
+        </div>
+      </figure>
+      <figure class="chart">
+        <div class="chart-meta">
+          <div class="chart-hed">
+            ...But in the greed of acing the serve one should not take the risk
+            of getting Double Faults. As Higher the double faults higher the
+            chance of loosing
+          </div>
+        </div>
+        <div class="">
+          <div>
+            <div id="distributionplot-parent">
+              <div class="distributionplot-graphic"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-footer">
+          <div class="chart-notes">
+            <!-- <div class="chart-note"><sup>*</sup>One kind of note</div>
+            <div class="chart-note">Note: This is a note</div> -->
+          </div>
+          <div class="chart-source">
+            Chart: Meet Daxini · Source:
+            <a
+              href="https://www.tennisabstract.com/blog/"
+              class="chart-source"
+              style="text-decoration: none"
+              >Jeff Sackmann</a
+            >
+          </div>
+        </div>
+      </figure>
+      <figure class="chart">
+        <div class="chart-meta">
+          <div class="chart-hed">
+            Examining the age of the champions it highlights a notable trend in
+            recent Grand Slam tournaments: the seasoned players and remarkably
+            young newcomers are increasingly clinching titles.
+          </div>
+        </div>
+        <div class="">
+          <div>
+            <div id="scatterchart-parent">
+              <div class="scatterchart-graphic"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-footer">
+          <div class="chart-notes">
+            <div class="chart-note">
+              Note: The 2020 Wimbledon tournament was cancelled due to the
+              COVID-19 pandemic, so no data is there for the 2020 Wimbledon
+              tournament in the plot.
+            </div>
+          </div>
+          <div class="chart-source">
+            Chart: Meet Daxini · Source:
+            <a
+              href="https://www.tennisabstract.com/blog/"
+              class="chart-source"
+              style="text-decoration: none"
+              >Jeff Sackmann</a
+            >
+          </div>
+        </div>
+      </figure>
+    </div>
+  </body>
+</html>

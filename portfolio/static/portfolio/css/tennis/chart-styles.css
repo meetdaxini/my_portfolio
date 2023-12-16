@@ -1,0 +1,145 @@
+.container {
+  width: 900px;
+  max-width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.center-column {
+  padding: calc(var(--my-unit) * 10) 0;
+  max-width: calc(100vw - 10px);
+  width: 615px;
+  font-size: var(--my-scale0);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--my-unit) * 16);
+  margin-left: auto;
+  margin-right: auto;
+}
+.tickline {
+  stroke: var(--my-color-gray1);
+  stroke-width: 1px;
+}
+
+.tickline-zero {
+  stroke: var(--my-color-black);
+  stroke-width: 1.5px;
+}
+
+.xtick {
+  stroke: var(--my-color-gray2);
+  dominant-baseline: hanging;
+  text-anchor: middle;
+}
+
+.ytick {
+  stroke: var(--my-color-gray2);
+  transform: translateY(-4px);
+  text-anchor: end;
+}
+
+.ytick-unit {
+  stroke: var(--my-color-gray2);
+  transform: translate(-4px, -4px);
+}
+
+.line-mark {
+  fill: none;
+  stroke-width: 2px;
+  stroke: var(--my-color-blue);
+}
+
+.barlabel {
+  stroke: var(--my-color-gray4);
+  dominant-baseline: middle;
+  font-weight: var(--my-weight-semibold);
+  /* transform: translateY(-4px); */
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+text {
+  font-family: var(--my-font-sans);
+    font-size: 10px;
+    fill: var(--my-color-gray4);
+    font-weight: var(--my-weight-regular);
+    font-variant-numeric: tabular-nums;
+}
+
+.grid path {
+  stroke-width: 0;
+  stroke: #333333;
+}
+
+.grid .tick line {
+  stroke: #333333;
+  stroke-width: 0.3px;
+  stroke-opacity: 0.3;
+}
+
+text.chart-title {
+  font-family: var(--my-font-sans);
+  font-size: 14px;
+  font-weight: bold;
+  fill: #222222
+}
+
+text.chart-label {
+  font-family: var(--my-font-sans);
+    font-weight: var(--my-weight-regular);
+    font-size: var(--my-scale-000);
+    line-height: var(--my-leading-tight-000);
+    color: var(--my-color-gray4);
+    font-variant-numeric: tabular-nums;
+}
+
+text.chart-source {
+  font-family: var(--my-font-sans);
+  font-size: 8px;
+  fill: #999999;
+}
+
+text.copyright {
+  font-family: var(--my-font-sans);
+  font-size: 8px;
+  fill: #999999;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #ffffff;
+  font-family: var(--my-font-sans);
+  font-size: 11px;
+  padding: 4px;
+  color: #666666;
+  border: none;
+  box-shadow: 0px 0px 3px 0px #E6E6E6;
+  pointer-events: none;
+
+}
+.barchart-graphic {
+  position: relative;
+}
+.scatterchart-graphic {
+  position: relative;
+}
+.distributionplot-graphic {
+  position: relative;
+}
+.legend {
+  font-family: var(--my-font-sans);
+  font-weight: var(--my-weight-regular);
+  font-size: 10px;
+  fill: var(--my-color-gray4);
+  font-variant-numeric: tabular-nums;
+}
+

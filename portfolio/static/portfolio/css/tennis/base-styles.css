@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&display=swap');
+
+:root {
+  --my-unit: 4px;
+  --my-unit-half: 2px;
+  --my-font-sans: "Open Sans", Arial, sans-serif;
+  --my-font-serif: "Source Serif 4", georgia, serif;
+  --my-font-display: var(--my-font-serif);
+  --my-base-font-size: 18px;
+  --my-scale-0000: 12.375px;
+  --my-scale-000: 13.5px;
+  --my-scale-00: 15.75px;
+  --my-scale-0: 18px;
+  --my-scale-1: 20.25px;
+  --my-scale-2: 23.625px;
+  --my-scale-3: 27px;
+  --my-scale-4: 33.75px;
+  --my-scale-5: 40.5px;
+  --my-scale-6: 54px;
+  --my-scale-7: 67.5px;
+  --my-scale-8: 81px;
+  --my-leading-0000: 20px;
+  --my-leading-000: 20px;
+  --my-leading-00: 24px;
+  --my-leading-0: 24px;
+  --my-leading-1: 28px;
+  --my-leading-2: 32px;
+  --my-leading-3: 36px;
+  --my-leading-4: 44px;
+  --my-leading-5: 52px;
+  --my-leading-6: 68px;
+  --my-leading-7: 76px;
+  --my-leading-8: 92px;
+  --my-leading-tight-0000: 16px;
+  --my-leading-tight-000: 16px;
+  --my-leading-tight-00: 16px;
+  --my-leading-tight-0: 20px;
+  --my-leading-tight-1: 24px;
+  --my-leading-tight-2: 24px;
+  --my-leading-tight-3: 28px;
+  --my-leading-tight-4: 36px;
+  --my-leading-tight-5: 40px;
+  --my-leading-tight-6: 52px;
+  --my-leading-tight-7: 56px;
+  --my-leading-tight-8: 68px;
+  --my-weight-light: 300;
+  --my-weight-regular: 400;
+  --my-weight-medium: 500;
+  --my-weight-semibold: 600;
+  --my-weight-bold: 700;
+  --my-weight-extrabold: 800;
+  --my-weight-black: 900;
+  --my-line-width-xs: 0.5px;
+  --my-line-width-sm: 1px;
+  --my-line-width-md: 1.5px;
+  --my-line-width-lg: 2px;
+  --my-line-width-xl: 2.5px;
+  --my-color-cherry0: #ffced6;
+  --my-color-cherry1: #ffa7b7;
+  --my-color-cherry2: #f66c8d;
+  --my-color-cherry3: #de2b67;
+  --my-color-cherry4: #be0051;
+  --my-color-cherry5: #8b003a;
+  --my-color-cherry6: #501927;
+  --my-color-blue0: #d0dff6;
+  --my-color-blue1: #9dc0f3;
+  --my-color-blue2: #679df0;
+  --my-color-blue3: #3978e0;
+  --my-color-blue4: #1f5db6;
+  --my-color-blue5: #15458a;
+  --my-color-blue6: #0b2d5e;
+  --my-color-orange0: #ffd4a7;
+  --my-color-orange1: #fbb05f;
+  --my-color-orange2: #e08800;
+  --my-color-orange3: #b16a00;
+  --my-color-orange4: #8b5300;
+  --my-color-orange5: #6a3e00;
+  --my-color-orange6: #432700;
+  --my-color-violet0: #e4daed;
+  --my-color-violet1: #cab5df;
+  --my-color-violet2: #ad8dce;
+  --my-color-violet3: #9169bf;
+  --my-color-violet4: #7546af;
+  --my-color-violet5: #583289;
+  --my-color-violet6: #301a4b;
+  --my-color-green0: #b4ebdc;
+  --my-color-green1: #6eceb7;
+  --my-color-green2: #3bac94;
+  --my-color-green3: #288975;
+  --my-color-green4: #1b6959;
+  --my-color-green5: #144e42;
+  --my-color-green6: #0b342b;
+  --my-color-gray0: #dddedf;
+  --my-color-gray1: #bcbdc0;
+  --my-color-gray2: #999b9f;
+  --my-color-gray3: #797b7f;
+  --my-color-gray4: #5c5d61;
+  --my-color-gray5: #444548;
+  --my-color-gray6: #2d2d2f;
+  --my-color-category0: #cf4d6f;
+  --my-color-category1: #266dd3;
+  --my-color-category2: #c17817;
+  --my-color-category3: #301A4B;
+  --my-color-category4: #439A86;
+  --my-color-purple-to-teal0000: #6A22B2;
+  --my-color-purple-to-teal000: #9B69C7;
+  --my-color-purple-to-teal00: #C6AADB;
+  --my-color-purple-to-teal0: #EEEEEE;
+  --my-color-purple-to-teal1: #BCE5E4;
+  --my-color-purple-to-teal2: #69D7D5;
+  --my-color-purple-to-teal3: #00D4D8;
+  --my-color-orange-to-orange0000: #D95F1A;
+  --my-color-orange-to-orange000: #D29A3A;
+  --my-color-orange-to-orange00: #CDC979;
+  --my-color-orange-to-orange0: #D6F0C1;
+  --my-color-orange-to-orange1: #8DC0A1;
+  --my-color-orange-to-orange2: #4B8F84;
+  --my-color-orange-to-orange3: #005F66;
+  --my-color-highlight: var(--my-color-category0);
+  --my-color-primary: var(--my-color-category1);
+  --my-color-gray: bcbdc0;
+  --my-color-white: #ffffff;
+  --my-color-black: #333333;
+  --my-color-cherry: var(--my-color-category0);
+  --my-color-blue: var(--my-color-category1);
+  --my-color-orange: var(--my-color-category2);
+  --my-color-violet: var(--my-color-category3);
+  --my-color-green: var(--my-color-category4);
+}
+  
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+figure.chart {
+  all: unset;
+}
+
+.chart-meta {
+  margin-bottom: calc(var(--my-unit) * 1);
+}
+.chart-footer {
+  margin-top: calc(var(--my-unit) * 1);
+}
+
+.chart-hed {
+  font-family: var(--my-font-sans);
+  font-size: var(--my-scale-1);
+  line-height: var(--my-leading-tight-1);
+  margin: 0;
+  font-weight: var(--my-weight-bold);
+  color: var(--my-color-black);
+}
+
+.chart-dek {
+  font-family: var(--my-font-sans);
+  font-size: var(--my-scale-00);
+  line-height: var(--my-leading-tight-ß00);
+  margin: 0;
+  font-weight: var(--my-weight-regular);
+  color: var(--my-color-gray4);
+}
+.chart-dek:not(:last-of-type) {
+  margin-bottom: calc(var(--my-unit) * 2);
+}
+.chart-descriptor {
+  font-family: var(--my-font-sans);
+  font-weight: var(--my-weight-bold);
+  font-size: var(--my-scale-000);
+  line-height: var(--my-leading-tight-000);
+  color: var(--my-color-black);
+}
+.chart-note {
+  font-family: var(--my-font-sans);
+  font-size: var(--my-scale-000);
+  line-height: var(--my-leading-tight-000);
+  margin: 0;
+  font-weight: var(--my-weight-regular);
+  color: var(--my-color-gray4);
+}
+
+.chart-source {
+  font-family: var(--my-font-sans);
+  font-size: var(--my-scale-000);
+  line-height: var(--my-leading-tight-000);
+  margin: 0;
+  font-weight: var(--my-weight-regular);
+  color: var(--my-color-gray4);
+}
+
+.chart-label {
+  font-family: var(--my-font-sans);
+  font-weight: var(--my-weight-regular);
+  font-size: var(--my-scale-000);
+  line-height: var(--my-leading-tight-000);
+  color: var(--my-color-gray4);
+  font-variant-numeric: tabular-nums;
+}
+
+.svg-chart-label {
+  font-family: var(--my-font-sans);
+  font-weight: var(--my-weight-regular);
+  font-size: var(--my-scale-000);
+  fill: var(--my-color-gray4);
+  font-variant-numeric: tabular-nums;
+}
+
