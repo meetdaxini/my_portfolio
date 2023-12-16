@@ -13,7 +13,7 @@ const renderAceGraph = () => {
     .attr("preserveAspectRatio", "xMinYMin")
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
-  d3.csv("surface_aces_matches.csv")
+  d3.csv("https://raw.githubusercontent.com/meetdaxini/my_portfolio/tennis_viz/portfolio/static/portfolio/surface_aces_matches.csv")
     .then(function (data) {
       const typeKeys = data.columns.slice(1);
       const stack = d3.stack()
@@ -167,7 +167,7 @@ const renderAgeGraph = () => {
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-  d3.csv("final_winner_age.csv")
+  d3.csv("https://raw.githubusercontent.com/meetdaxini/my_portfolio/tennis_viz/portfolio/static/portfolio/final_winner_age.csv")
     .then(function (data) {
       const f = d3.format("~s")
       const years = data.map(d => +d.tourney_year);
@@ -326,7 +326,7 @@ const renderDistributionGraph = () => {
     .attr("preserveAspectRatio", "xMinYMin")
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
-  d3.csv("distribution_data.csv")
+  d3.csv("https://raw.githubusercontent.com/meetdaxini/my_portfolio/tennis_viz/portfolio/static/portfolio/distribution_data.csv")
     .then(function (data) {
       const maxValue = d3.max(data, d => Math.max(+d.winner, +d.loser));
       const xScale = d3.scaleLinear()
